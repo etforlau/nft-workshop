@@ -126,24 +126,6 @@ contract Workshop is ManuvantaraCollection {
         return recipies;
     }
 
-    function compareArrays(
-        uint256[] memory array1,
-        uint256[] memory array2
-    ) internal pure returns (bool) {
-        for (uint256 i = 0; i < array1.length; i++) {
-            bool isFound = false;
-            for (uint256 j = 0; j < array2.length; j++) {
-                if (array2[j] == array1[i]) {
-                    isFound = true;
-                }
-            }
-            if (!isFound) {
-                return false;
-            }
-        }
-        return true;
-    }
-
     function assembling(
         uint256 _recipeId,
         uint256 _outputAmount
