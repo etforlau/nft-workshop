@@ -1,13 +1,5 @@
-# Sample Hardhat Project
+# Workshop for crafting NFT
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
-
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+This project contains 2 Solidity smart contracts. ERC-1155 standard became the one, which was chosen to be implemented.
+"ManuvantaraCollection.sol" has definition for fungible and non-fungible tokens; mints them; keeps track of wallets and amount of tokens they have. It was designed only for owner to work with it, since all main functions are in another contract.
+"Workshop.sol" is aimed for users and contains all main functions.
