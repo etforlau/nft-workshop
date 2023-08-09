@@ -10,10 +10,12 @@ Algorithm of interacting with workshop:
 1. Create a token using function `createNewToken`: give it name, define its symbol and fungibility;<br />
 2. If token was created as fungible, owner should mint it to proper addresses. Non-fungible tokens are automatically sent to their creator's address and afterwards it is impossible to mint or assemble them;<br />
 3. Create a recipe. For this you should use `addRecipe` function. There you should pass:<br/>
-   a. ids of input tokens (ids can be found using function `getIdBySymbol`, which takes token's symbol as argument);<br />
-   b. amounts of each token **in the same order as it was done with ids**;<br />
-   c. id of the output token. To your attention, it is impossible to create more than 1 type of token using any recipe;<br />
+   a. `inputsIds`: ids of input tokens (ids can be found using function `getIdBySymbol`, which takes token's symbol as argument);<br />
+   b. `inputsAmounts`: amounts of each token **in the same order as it was done with ids**;<br />
+   c. `outputId`: id of the output token. To your attention, it is impossible to create more than 1 type of token using any recipe;<br />
 4. If you need to change the recipy, you should use `changeRecipe` function. As arguments it takes:<br />
-   a. ids of tokens, amount of which you want to change;<br />
+   a. ids of tokens, amount of which you want to change,<br />
    b. new amounts of tokens **in the same order as it was ids were indicated**;<br />
 5. Use `assembling` or `disassembling` functions depending on your needs. Please, note that it is possible to assemble something using non-fungible tokens are impossible to assemble, but it can be as an input to assemble something else.
+   <br />
+   `assembling` and `disassembling` use the same recipes. The difference is that the former takes `inputsIds` tokens and gives `outputId` token. The last takes `outputId` token and gives `inputsIds` tokens.
